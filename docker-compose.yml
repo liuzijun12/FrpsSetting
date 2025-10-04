@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  frps:
+    image: fatedier/frps:v0.63.0
+    container_name: frps
+    restart: always
+    networks:
+      - frp_network
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./frps.toml:/etc/frp/frps.toml
+    command: ["-c", "/etc/frp/frps.toml"]
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: always
+    networks:
+      - frp_network
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+networks:
+  frp_network:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

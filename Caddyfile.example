@@ -1,0 +1,4 @@
+
+7500.yourdomain.com {
+    reverse_proxy frps:7500
+}
