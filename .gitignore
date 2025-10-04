@@ -1,0 +1,29 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# FRP 配置文件（不提交实际配置，只保留示例）
+frps.toml
+Caddyfile
+
+# Docker
+docker-compose.override.yml
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.bak
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 备份文件
+*.backup
+
