@@ -1,3 +1,12 @@
-dashboard.yourdomain.com {
-    reverse_proxy frps:7500
-}
+# 应用端口（客户端链接时需要）
+bindPort = 7000
+
+# web端口
+webServer.addr = "0.0.0.0"
+webServer.port = 7500
+webServer.user = "admin"
+webServer.password = "admin"
+
+# 鉴权信息 token可以替换成自己的（客户端链接时需要）
+auth.method = "token"
+auth.token= "123456789"
